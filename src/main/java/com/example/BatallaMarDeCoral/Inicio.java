@@ -19,6 +19,7 @@ public class Inicio extends Application {
         stage.setX(0);
         stage.setY(0);
 
+        stage.getIcons().add(new Image(this.getClass().getResource("imagenes/icono.jpeg").toString()));
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.initStyle(StageStyle.UNDECORATED);

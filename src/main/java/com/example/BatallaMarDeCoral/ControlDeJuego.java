@@ -6,6 +6,8 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -69,6 +71,8 @@ public class ControlDeJuego {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Fin de la simulación");
         alert.setHeaderText(null);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(this.getClass().getResource("imagenes/icono.jpeg").toString()));
         PauseTransition pause = new PauseTransition(Duration.seconds(3));
         pause.setOnFinished(event -> Platform.runLater(() -> {
             dialog = alert.getDialogPane();

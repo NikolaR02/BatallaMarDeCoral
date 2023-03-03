@@ -2,64 +2,38 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="758.0" prefWidth="255.0" styleClass="color" stylesheets="@css/lateral_rojo.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="78.0" layoutY="300.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="Destructor vida" />
-      <ProgressBar fx:id="pbVidaDestructor" layoutX="61.0" layoutY="343.0" prefHeight="18.0" prefWidth="122.0" progress="0.0" stylesheets="@css/lateral_rojo.css" />
-      <Label fx:id="vidaDestructor" layoutX="42.0" layoutY="782.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="80" />
-      <Label fx:id="acorazado" layoutX="76.0" layoutY="376.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="Acorazado vida" />
-      <Label fx:id="vidaAcorazado" layoutX="102.0" layoutY="783.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="120" />
-      <ProgressBar fx:id="pbVidaAcorazado" layoutX="60.0" layoutY="414.0" prefHeight="18.0" prefWidth="122.0" progress="0.0" stylesheets="@css/lateral_rojo.css" />
-      <Label fx:id="submarino" layoutX="73.0" layoutY="446.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text=" Submarino vida" />
-      <Label fx:id="acorazado11" layoutX="86.0" layoutY="512.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="Lancha vida" />
-      <Label fx:id="vidaSubmarino" layoutX="27.0" layoutY="779.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="30" />
-      <Label fx:id="vidaLancha" layoutX="210.0" layoutY="779.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="10" />
-      <ProgressBar fx:id="pbVidaLancha" layoutX="60.0" layoutY="546.0" prefHeight="18.0" prefWidth="122.0" progress="0.0" stylesheets="@css/lateral_rojo.css" />
-      <ProgressBar fx:id="pbVidaSubmarino" layoutX="60.0" layoutY="478.0" prefHeight="18.0" prefWidth="122.0" progress="0.0" stylesheets="@css/lateral_rojo.css" />
-      <Label layoutX="85.0" layoutY="142.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="QUEDAN">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="88.0" layoutY="243.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="BARCOS">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="barcosrestantes" layoutX="110.0" layoutY="181.0" text="4">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="41.0" layoutY="96.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="EQUIPO ROJO">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="disparoDestructor" fitHeight="18.0" fitWidth="18.0" layoutX="66.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-
-         </image>
-      </ImageView>
-      <ImageView fx:id="disparoAcorazado" fitHeight="18.0" fitWidth="18.0" layoutX="126.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-
-         </image>
-      </ImageView>
-      <ImageView fx:id="disparoSubmarino" fitHeight="18.0" fitWidth="18.0" layoutX="185.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-
-         </image>
-      </ImageView>
-      <ImageView fx:id="disparoLancha" fitHeight="18.0" fitWidth="18.0" layoutX="164.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-
-         </image>
-      </ImageView>
-   </children>
+<AnchorPane prefHeight="768.0" prefWidth="255.0" styleClass="color" stylesheets="@css/lateral_rojo.css"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <Label layoutX="77.0" layoutY="188.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css"
+          text="Destructor vida"/>
+   <ProgressBar fx:id="pbVidaDestructor" layoutX="59.0" layoutY="218.0" prefHeight="18.0" prefWidth="122.0"
+                progress="0.0" stylesheets="@css/lateral_rojo.css"/>
+   <Label fx:id="vidaDestructor" layoutX="194.0" layoutY="219.0" styleClass="text-color"
+          stylesheets="@css/lateral_rojo.css" text="80"/>
+   <Label fx:id="acorazado" layoutX="74.0" layoutY="261.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css"
+          text="Acorazado vida"/>
+   <Label fx:id="vidaAcorazado" layoutX="191.0" layoutY="290.0" styleClass="text-color"
+          stylesheets="@css/lateral_rojo.css" text="120"/>
+   <ProgressBar fx:id="pbVidaAcorazado" layoutX="58.0" layoutY="289.0" prefHeight="18.0" prefWidth="122.0"
+                progress="0.0" stylesheets="@css/lateral_rojo.css"/>
+   <Label fx:id="submarino" layoutX="71.0" layoutY="327.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css"
+          text=" Submarino vida"/>
+   <Label fx:id="acorazado11" layoutX="84.0" layoutY="392.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css"
+          text="Lancha vida"/>
+   <Label fx:id="vidaSubmarino" layoutX="191.0" layoutY="354.0" styleClass="text-color"
+          stylesheets="@css/lateral_rojo.css" text="30"/>
+   <Label fx:id="vidaLancha" layoutX="191.0" layoutY="422.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css"
+          text="10"/>
+   <ProgressBar fx:id="pbVidaLancha" layoutX="58.0" layoutY="421.0" prefHeight="18.0" prefWidth="122.0" progress="0.0"
+                stylesheets="@css/lateral_rojo.css"/>
+   <ProgressBar fx:id="pbVidaSubmarino" layoutX="58.0" layoutY="353.0" prefHeight="18.0" prefWidth="122.0"
+                progress="0.0" stylesheets="@css/lateral_rojo.css"/>
+   <Label layoutX="41.0" layoutY="96.0" styleClass="text-color" stylesheets="@css/lateral_rojo.css" text="EQUIPO ROJO">
+      <font>
+         <Font size="24.0"/>
+      </font>
+   </Label>
 </AnchorPane>

@@ -2,7 +2,6 @@ package com.example.BatallaMarDeCoral;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,7 +21,6 @@ public class PestanaRojo extends Stage {
     Label txtVidaAcorazado;
     Label txtVidaLancha;
     Label txtVidaSubmarino;
-    Label txtBarcosRestantes;
     public PestanaRojo() {
         cargarInterfaz();
         destructor.progressProperty().addListener((obs, oldValue, newValue) -> {
@@ -66,7 +64,6 @@ public class PestanaRojo extends Stage {
         this.submarino.setProgress(1);
         this.acorazado.setProgress(1);
         Timeline moverse = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-            cambiarBarcosRestantes();
             for (Barco barco : this.control.getBarcos()) {
                 if (barco.getNombre().equals("destructor") && barco.getEquipo().equals("Rojo")) {
                     txtVidaDestructor.setText(String.valueOf(barco.getVida()));
@@ -88,25 +85,6 @@ public class PestanaRojo extends Stage {
         }));
         moverse.setCycleCount(Timeline.INDEFINITE);
         moverse.play();
-    }
-    public void cambiarBarcosRestantes() {
-
-        Platform.runLater(() -> {
-            int barcos = 0;
-            if (Integer.parseInt(txtVidaAcorazado.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(txtVidaDestructor.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(txtVidaLancha.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(txtVidaSubmarino.getText()) > 0) {
-                barcos++;
-            }
-            txtBarcosRestantes.setText(String.valueOf(barcos));
-        });
     }
     public synchronized void getControl(ControlDeJuego control) {
         this.control = control;
@@ -132,15 +110,13 @@ public class PestanaRojo extends Stage {
             txtVidaLancha.setText("10");
 
             submarino = (ProgressBar) loader.getNamespace().get("pbVidaSubmarino");
-            ;
+
             txtVidaSubmarino = (Label) loader.getNamespace().get("vidaSubmarino");
             txtVidaSubmarino.setText("30");
 
             destructor = (ProgressBar) loader.getNamespace().get("pbVidaDestructor");
             txtVidaDestructor = (Label) loader.getNamespace().get("vidaDestructor");
             txtVidaDestructor.setText("80");
-
-            txtBarcosRestantes = (Label) loader.getNamespace().get("barcosrestantes");
 
             setScene(scene);
             setX(0);

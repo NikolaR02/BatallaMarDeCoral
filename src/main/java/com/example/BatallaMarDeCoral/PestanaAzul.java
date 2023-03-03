@@ -2,7 +2,6 @@ package com.example.BatallaMarDeCoral;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,7 +21,6 @@ public class PestanaAzul extends Stage {
     Label textoVidaAcorazado;
     Label txtVidaLancha;
     Label txtVidaSubmarino;
-    Label txtBarcosRestantes;
     public PestanaAzul() {
         cargarInterfaz();
         destructor.progressProperty().addListener((obs, oldValue, newValue) -> {
@@ -67,7 +65,6 @@ public class PestanaAzul extends Stage {
         this.submarino.setProgress(1);
         this.acorazado.setProgress(1);
         Timeline moverse = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-            cambiarBarcosRestantes();
             for (Barco barco : this.control.getBarcos()) {
                 if (barco.getNombre().equals("destructor") && barco.getEquipo().equals("Azul")) {
                     textoVidaDestructor.setText(String.valueOf(barco.getVida()));
@@ -89,24 +86,6 @@ public class PestanaAzul extends Stage {
         }));
         moverse.setCycleCount(Timeline.INDEFINITE);
         moverse.play();
-    }
-    public void cambiarBarcosRestantes() {
-        Platform.runLater(()->{
-            int barcos = 0;
-            if (Integer.parseInt(textoVidaAcorazado.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(textoVidaDestructor.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(txtVidaLancha.getText()) > 0) {
-                barcos++;
-            }
-            if (Integer.parseInt(txtVidaSubmarino.getText()) > 0) {
-                barcos++;
-            }
-            txtBarcosRestantes.setText(String.valueOf(barcos));
-        });
     }
     public synchronized void getControl(ControlDeJuego control) {
         this.control = control;
@@ -140,7 +119,6 @@ public class PestanaAzul extends Stage {
             textoVidaDestructor = (Label) loader.getNamespace().get("vidaDestructor");
             textoVidaDestructor.setText("80");
 
-            txtBarcosRestantes = (Label) loader.getNamespace().get("barcosrestantes");
 
             setScene(scene);
             setX(0);
